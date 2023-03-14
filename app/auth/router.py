@@ -9,7 +9,7 @@ from fastapi.security import OAuth2PasswordRequestForm as OA2Form
 from fastapi import APIRouter, Depends, HTTPException, Body, Query
 from .config import gen_token, FAST2SMS_API_KEY, OTP_EXPIRE_MINUTES
 
-auth_routes = APIRouter(prefix='/auth')
+auth_routes = APIRouter(prefix='/auth', tags=['auth'])
 
 
 @auth_routes.post('/token', response_model=AuthToken)
